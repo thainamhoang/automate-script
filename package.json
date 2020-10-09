@@ -1,0 +1,16 @@
+{
+  "name": "automate-script",
+  "version": "1.0.0",
+  "description": "Script automation for course picking & auto-signin",
+  "main": "index.js",
+  "author": "namhoangthai2607 <39653408+namhoangthai2607@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^5.2.1",
+    "puppeteer-extra": "^3.1.13",
+    "puppeteer-extra-plugin-stealth": "^2.5.0",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23",
+    "xml2json": "^0.12.0"
+  }
+}
