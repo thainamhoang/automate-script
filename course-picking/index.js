@@ -1,9 +1,9 @@
 const puppeteer = require("puppeteer");
 
-const MAJOR = "CSCI";
+const MAJOR = "MATH";
 const COURSE = "CSCI 111 B1";
-const username = "hoangnt";
-const password = "123dpmc456aA@";
+const username = "username";
+const password = "password";
 
 (async () => {
   try {
@@ -55,10 +55,24 @@ const password = "123dpmc456aA@";
     await page.waitFor("#pg0_V_dgCourses");
     await page.waitFor("#pg0_V_dgCourses > tbody");
 
-    // await page.waitFor("#pg0_V_dgCourses_sec2_row1_lnkCourse");
-    // await page.click("#pg0_V_dgCourses_sec2_row1_lnkCourse");
+    // CLICK ON COURSE
+    const classTag = 'a[id="pg0_V_dgCourses_sec2_row13_lnkCourse"]';
+    await page.waitFor(classTag);
+    await page.click(classTag);
 
-    // await browser.close();
+    // ADD THIS COURSE CLICK
+    const addThisCourse = 'a[id="pg0_V_lnkAddCourse]"';
+    await navigationPromise;
+    await page.waitFor(addThisCourse);
+    await page.click(addThisCourse);
+
+    await page.screenshot({
+      path: `./${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}.jpg`,
+      type: "jpeg",
+      fullPage: true,
+    });
+    await page.close();
+    await browser.close();
     console.log("Successfully choosing course!!!");
   } catch (e) {
     console.log(`ERROR: ${JSON.stringify(e, null, 2)}`);
